@@ -773,12 +773,12 @@
     };
 
     /**
-     * Serializes all highlights in the element the highlighter is applied to.
+     * Serializes all highlights in the element the highlighter is applied to unless a list of highligts is passed
      * @returns {string} - stringified JSON with highlights definition
      * @memberof TextHighlighter
      */
-    TextHighlighter.prototype.serializeHighlights = function () {
-        var highlights = this.getHighlights(),
+    TextHighlighter.prototype.serializeHighlights = function (highlightsList) {
+        var highlights = highlightsList || this.getHighlights(),
             refEl = this.el,
             hlDescriptors = [];
 
